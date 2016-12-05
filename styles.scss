@@ -1,0 +1,98 @@
+@import "reset";
+
+$nogc-color: crimson;
+$gc-color: teal;
+$arc-color: tan;
+
+a {
+	text-decoration: none;
+	border-bottom: 3px solid orange;
+	padding: 5px;
+}
+
+aside {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	background-color: peru;
+
+	button {
+		background: pink;
+		border: none;
+		border-radius: 3px;
+		width: 100%;
+		padding: 3% 0;
+		margin: 3	px 0;
+		&:hover {
+			border: teal 1px solid;
+		}
+	}
+}
+
+main {
+	padding: 10px;
+	width: 80%;
+	position: absolute;
+	right: 0;
+	background-color: slateblue;
+
+	.grid {
+
+		.tile {
+			width: calc(20% - 20px);
+			padding: 20px;
+			margin: 10px;
+			background: blue;
+			border-radius: 5px;
+
+			@media all and (max-width: 900px) {
+				width: calc(100% - 20px);
+			}
+
+			&:hover {
+				box-shadow: 1px 1px 3px black;
+			}
+
+			&.nogc {
+				background-color: $nogc-color;
+				color: complement($nogc-color);
+
+			}
+
+			&.gc {
+				background-color: $gc-color;
+				color: complement($gc-color);
+			}
+
+			&.arc {
+				background-color: $arc-color;
+				color: complement($arc-color);
+			}
+
+			h3 {
+				color: white;
+			}
+
+			a {
+				text-decoration: none;
+				font-weight: bold;
+				color: hotpink;
+				border-bottom: darkslategrey 3px solid;
+				padding: 10px;
+				transition: all 1s;
+
+				&:hover {
+					background-color: darkslategrey;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+
+
