@@ -221,4 +221,58 @@ body {
         color: black;
         background-color: dimgrey; }
 
+@keyframes mover {
+  0%, 100% {
+    top: 0;
+    left: 0; }
+  25% {
+    top: 0;
+    left: calc(100% - 50px); }
+  50% {
+    top: calc(100% - 50px);
+    left: calc(100% - 50px); }
+  75% {
+    top: calc(100% - 50px);
+    left: 0; } }
+@keyframes inhale-prompter {
+  0%,  100% {
+    opacity: 1; }
+  25%, 50%, 75% {
+    opacity: 0; } }
+@keyframes exhale-prompter {
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 0; } }
+@keyframes hold-prompter {
+  25%, 75% {
+    opacity: 1; }
+  50%, 100% {
+    opacity: 0; } }
+.box-breather .wrapper {
+  width: 700px;
+  margin: 0 auto;
+  text-align: center; }
+.box-breather .big-box {
+  margin: 0 auto;
+  width: 550px;
+  height: 550px;
+  position: relative;
+  background-color: cornflowerblue; }
+.box-breather .little-box {
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+  position: relative;
+  animation: mover 16s linear infinite; }
+.box-breather .prompt .inhale {
+  animation: inhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+  opacity: 1; }
+.box-breather .prompt .exhale {
+  animation: exhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+  opacity: 0; }
+.box-breather .prompt .hold {
+  animation: hold-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+  opacity: 0; }
+
 /*# sourceMappingURL=styles.css.map */
