@@ -132,64 +132,86 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+body {
+  animation: fader 1s; }
+@keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+  body .wrapper {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px; }
+
 a {
   text-decoration: none;
-  border-bottom: 3px solid orange;
+  border-bottom: 3px solid darkorange;
+  color: darkorange;
   padding: 5px; }
+  a:hover {
+    background-color: #0073ff; }
 
-aside {
+.table-controls {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   width: 20%;
-  background-color: peru; }
-  aside button {
-    background: pink;
+  background-color: black; }
+  .table-controls button {
+    color: white;
+    background-color: black;
+    font-size: 1.2rem;
     border: none;
-    border-radius: 3px;
+    border-bottom: white 1px solid;
     width: 100%;
-    padding: 3% 0;
-    margin: 3	px 0; }
-    aside button:hover {
-      border: teal 1px solid; }
+    padding: 20px 5px;
+    transition: color 500ms, background-color 1s; }
+    .table-controls button:hover {
+      background-color: white;
+      color: black; }
 
-main {
+.lang-table {
   padding: 10px;
   width: 80%;
   position: absolute;
   right: 0;
-  background-color: slateblue; }
-  main .grid .tile {
+  background-color: lightgrey;
+  min-height: 100vh; }
+  .lang-table .grid .tile {
     width: calc(20% - 20px);
     padding: 20px;
     margin: 10px;
     background: blue;
     border-radius: 5px; }
     @media all and (max-width: 900px) {
-      main .grid .tile {
+      .lang-table .grid .tile {
         width: calc(100% - 20px); } }
-    main .grid .tile:hover {
+    .lang-table .grid .tile:hover {
       box-shadow: 1px 1px 3px black; }
-    main .grid .tile.nogc {
+    .lang-table .grid .tile.nogc {
       background-color: crimson;
       color: #14dcb4; }
-    main .grid .tile.gc {
+    .lang-table .grid .tile.gc {
       background-color: teal;
       color: maroon; }
-    main .grid .tile.arc {
-      background-color: tan;
-      color: #8caad2; }
-    main .grid .tile h3 {
+    .lang-table .grid .tile.arc {
+      background-color: goldenrod;
+      color: #2055da; }
+    .lang-table .grid .tile h3 {
       color: white; }
-    main .grid .tile a {
+    .lang-table .grid .tile a {
       text-decoration: none;
       font-weight: bold;
       color: hotpink;
       border-bottom: darkslategrey 3px solid;
       padding: 10px;
       transition: all 1s; }
-      main .grid .tile a:hover {
+      .lang-table .grid .tile a:hover {
         background-color: darkslategrey; }
+      .lang-table .grid .tile a:visited {
+        color: black;
+        background-color: dimgrey; }
 
 /*# sourceMappingURL=styles.css.map */
