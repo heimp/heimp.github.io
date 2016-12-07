@@ -156,68 +156,107 @@ body {
       padding: 20px 20px 20px 0;
       font-size: 2rem; }
 
-.table-controls {
+.lang-table .controls-pane {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   width: 20%;
   background-color: black; }
-  .table-controls button {
+  .lang-table .controls-pane .hidden-controls {
+    display: none; }
+    .lang-table .controls-pane .hidden-controls .filter-button {
+      color: white;
+      background-color: black;
+      font-size: 1.2rem;
+      border: none;
+      border-bottom: white 1px solid;
+      width: 100%;
+      padding: 20px 5px;
+      transition: color 500ms, background-color 1s; }
+      .lang-table .controls-pane .hidden-controls .filter-button:hover {
+        background-color: white;
+        color: black; }
+    .lang-table .controls-pane .hidden-controls form {
+      margin-top: 30px; }
+      .lang-table .controls-pane .hidden-controls form input[type="text"] {
+        width: 100%;
+        padding: 10px; }
+    @media all and (min-width: 480px) {
+      .lang-table .controls-pane .hidden-controls {
+        display: block; } }
+    @media all and (min-width: 768px) {
+      .lang-table .controls-pane .hidden-controls {
+        display: block; } }
+  .lang-table .controls-pane .slide-button {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    background-color: black; }
+    @media all and (min-width: 480px) {
+      .lang-table .controls-pane .slide-button {
+        display: none; } }
+    @media all and (min-width: 768px) {
+      .lang-table .controls-pane .slide-button {
+        display: none; } }
+  .lang-table .controls-pane .search-button {
+    position: absolute;
+    top: 0;
+    left: 0;
     color: white;
     background-color: black;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: white 1px solid;
-    width: 100%;
-    padding: 20px 5px;
-    transition: color 500ms, background-color 1s; }
-    .table-controls button:hover {
-      background-color: white;
-      color: black; }
-  .table-controls input[type="text"] {
-    width: 100%;
-    padding: 10px; }
-
-.lang-table {
+    padding: 20px; }
+    @media all and (min-width: 480px) {
+      .lang-table .controls-pane .search-button {
+        display: none; } }
+    @media all and (min-width: 768px) {
+      .lang-table .controls-pane .search-button {
+        display: none; } }
+.lang-table .table-pane {
   padding: 10px;
   width: 80%;
   position: absolute;
   right: 0;
   background-color: lightgrey;
   min-height: 100vh; }
-  .lang-table .grid .tile {
-    width: calc(20% - 20px);
+  .lang-table .table-pane .grid .tile {
+    width: calc(50% - 20px);
     padding: 20px;
     margin: 10px;
     background: blue;
     border-radius: 5px; }
-    @media all and (max-width: 900px) {
-      .lang-table .grid .tile {
-        width: calc(100% - 20px); } }
-    .lang-table .grid .tile:hover {
+    @media all and (min-width: 768px) {
+      .lang-table .table-pane .grid .tile {
+        width: calc(20% - 20px); } }
+    @media all and (min-width: 480px) {
+      .lang-table .table-pane .grid .tile {
+        width: calc(25% - 20px); } }
+    .lang-table .table-pane .grid .tile:hover {
       box-shadow: 1px 1px 3px black; }
-    .lang-table .grid .tile.nogc {
+    .lang-table .table-pane .grid .tile.nogc {
       background-color: crimson;
       color: #14dcb4; }
-    .lang-table .grid .tile.gc {
+    .lang-table .table-pane .grid .tile.gc {
       background-color: teal;
       color: maroon; }
-    .lang-table .grid .tile.arc {
+    .lang-table .table-pane .grid .tile.arc {
       background-color: goldenrod;
       color: #2055da; }
-    .lang-table .grid .tile h3 {
+    .lang-table .table-pane .grid .tile h3 {
       color: white; }
-    .lang-table .grid .tile a {
+    .lang-table .table-pane .grid .tile a {
       text-decoration: none;
       font-weight: bold;
       color: hotpink;
       border-bottom: darkslategrey 3px solid;
       padding: 10px;
       transition: all 1s; }
-      .lang-table .grid .tile a:hover {
+      .lang-table .table-pane .grid .tile a:hover {
         background-color: darkslategrey; }
-      .lang-table .grid .tile a:visited {
+      .lang-table .table-pane .grid .tile a:visited {
         color: black;
         background-color: dimgrey; }
 

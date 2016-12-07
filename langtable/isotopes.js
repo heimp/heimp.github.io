@@ -26,6 +26,7 @@ $(function() {
 	$('.search-name').on('input', function() {
 		var text = $(this).val();
 		grid.isotope({filter: function() {
+			window.scrollTo(0, 0);
 			var name = $(this).find('.name').text();
 			return name.match(new RegExp(text, 'i'));
 		}});

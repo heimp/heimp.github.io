@@ -1,8 +1,16 @@
 @import "reset";
 
-$nogc-color: crimson;
-$gc-color: teal;
-$arc-color: goldenrod;
+@mixin bp($size) {
+  @if $size == 'desktop' {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == 'tablet' {
+    @media all and (min-width: 480px) {
+      @content;
+    }
+  }
+}
 
 body {
 	animation: fader 1s;
@@ -49,104 +57,178 @@ body {
 	}
 }
 
-.table-controls {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 20%;
-	background-color: black;
-
-
-	button {
-		color: white;
-		background-color: black;
-		font-size: 1.2rem;
-		border: none;
-		border-bottom: white 1px solid;
-		width: 100%;
-		padding: 20px 5px;
-		transition: color 500ms, background-color 1s;
-
-		&:hover {
-			background-color: white;
-			color: black;
-		}
-	}
-
-	input[type="text"] {
-		width: 100%;
-		padding: 10px;
-	}
-}
-
 .lang-table {
-	padding: 10px;
-	width: 80%;
-	position: absolute;
-	right: 0;
-	background-color: lightgrey;
-	min-height: 100vh;
 
-	.grid {
+	$nogc-color: crimson;
+	$gc-color: teal;
+	$arc-color: goldenrod;
 
-		.tile {
-			width: calc(20% - 20px);
-			padding: 20px;
-			margin: 10px;
-			background: blue;
-			border-radius: 5px;
+	.controls-pane {
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 20%;
+		background-color: black;
+		
+		.hidden-controls {
 
-			@media all and (max-width: 900px) {
-				width: calc(100% - 20px);
-			}
+			display: none;
 
-			&:hover {
-				box-shadow: 1px 1px 3px black;
-			}
-
-			&.nogc {
-				background-color: $nogc-color;
-				color: complement($nogc-color);
-
-			}
-
-			&.gc {
-				background-color: $gc-color;
-				color: complement($gc-color);
-			}
-
-			&.arc {
-				background-color: $arc-color;
-				color: complement($arc-color);
-			}
-
-			h3 {
+			.filter-button {
 				color: white;
-			}
-
-			a {
-				text-decoration: none;
-				font-weight: bold;
-				color: hotpink;
-				border-bottom: darkslategrey 3px solid;
-				padding: 10px;
-				transition: all 1s;
+				background-color: black;
+				font-size: 1.2rem;
+				border: none;
+				border-bottom: white 1px solid;
+				width: 100%;
+				padding: 20px 5px;
+				transition: color 500ms, background-color 1s;
 
 				&:hover {
-					background-color: darkslategrey;
+					background-color: white;
+					color: black;
 				}
 
-				&:visited {
-					color: black;
-					background-color: dimgrey;
+			}
+
+			form {
+				margin-top: 30px;
+
+				input[type="text"] {
+					width: 100%;
+					padding: 10px;
 				}
+			}
+
+			@include bp(tablet) {
+				display: block;
+			}
+
+			@include bp(desktop) {
+				display: block;
+			}
+		}
+
+		.slide-button, {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 20px;
+			color: white;
+			background-color: black;
+
+			@include bp(tablet) {
+				display: none;
+			}
+
+			@include bp(desktop) {
+				display: none;
+			}
+		}
+
+		.search-button {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: white;
+			background-color: black;
+			padding: 20px;
+
+			@include bp(tablet) {
+				display: none;
+			}
+
+			@include bp(desktop) {
+				display: none;
 			}
 		}
 
 	}
 
+	.table-pane {
+		padding: 10px;
+		width: 80%;
+		position: absolute;
+		right: 0;
+		background-color: lightgrey;
+		min-height: 100vh;
+
+
+		@include bp(tablet) {
+
+		}
+
+		@include bp(desktop) {
+
+		}
+
+		.grid {
+
+			.tile {
+				width: calc(50% - 20px);
+				padding: 20px;
+				margin: 10px;
+				background: blue;
+				border-radius: 5px;
+
+				@include bp(desktop) {
+					width: calc(20% - 20px);
+				}
+
+				@include bp(tablet) {
+					width: calc(25% - 20px);
+				}
+
+				&:hover {
+					box-shadow: 1px 1px 3px black;
+				}
+
+				&.nogc {
+					background-color: $nogc-color;
+					color: complement($nogc-color);
+
+				}
+
+				&.gc {
+					background-color: $gc-color;
+					color: complement($gc-color);
+				}
+
+				&.arc {
+					background-color: $arc-color;
+					color: complement($arc-color);
+				}
+
+				h3 {
+					color: white;
+				}
+
+				a {
+					text-decoration: none;
+					font-weight: bold;
+					color: hotpink;
+					border-bottom: darkslategrey 3px solid;
+					padding: 10px;
+					transition: all 1s;
+
+					&:hover {
+						background-color: darkslategrey;
+					}
+
+					&:visited {
+						color: black;
+						background-color: dimgrey;
+					}
+				}
+			}
+
+		}
+
+	}
 }
+
 
 .box-breather {
 
@@ -217,7 +299,7 @@ body {
 		width: 50px;
 		height: 50px;
 		background-color: teal;
-		position: relative;;
+		position: relative;
 		animation: mover 16s linear infinite;
 	}
 

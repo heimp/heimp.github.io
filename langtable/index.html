@@ -5,35 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>way too many languages</title>
   <link rel="stylesheet" href="../styles/styles.css">
+  <script src="https://use.fontawesome.com/89bc122081.js"></script>
+
 </head>
 
-<body>
+<body class="lang-table">
 
-  <aside class="table-controls">
-    <div class="button-group filter-button-group">
-      <button class="button is-checked" data-filter="*">
-        show all
-      </button>
-      <button class="button" data-filter=".nogc">
-        no garbage collection
-      </button>
-      <button class="button" data-filter=".gc">
-        garbage collection
-      </button>
-      <button class="button" data-filter=".arc">
-        automatic reference counting
-      </button>
-      <button class="alphabetical-sort">
-        sort
-      </button>
-      <form>
-        <input type="text" class="search-name" placeholder="search for a name">
-      </form>
-
+  <div class="controls-pane">
+    <div class="hidden-controls">
+      <div class="button-group filter-button-group">
+        <button class="filter-button is-checked" data-filter="*">
+          show all
+        </button>
+        <button class="filter-button" data-filter=".nogc">
+          no garbage collection
+        </button>
+        <button class="filter-button" data-filter=".gc">
+          garbage collection
+        </button>
+        <button class="filter-button" data-filter=".arc">
+          automatic reference counting
+        </button>
+        <button class="filter-button alphabetical-sort">
+          sort
+        </button>
+        <form>
+          <input type="text" class="search-name" placeholder="search for a name">
+        </form>
+      </div>
     </div>
-  </aside>
 
-  <main class="lang-table">
+    <button class="slide-button">
+      <i class="fa fa-bars"></i>
+    </button>
+    <button class="search-button">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+
+  <div class="table-pane">
     <div class="grid">
       <div class="tile nogc">
         <h3 class="name">Rust</h3>
@@ -1243,7 +1253,7 @@
         <a href="https://github.com/sol-lang/sol">site</a>
       </div>
     </div>
-  </main>
+  </div>
 
 	<script
 			  src="https://code.jquery.com/jquery-3.1.1.min.js"
