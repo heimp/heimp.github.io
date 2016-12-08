@@ -26,6 +26,11 @@ body {
 
 }
 
+.wrapper {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 1000px;
+}
 
 .home {
 
@@ -51,10 +56,6 @@ body {
 	}
 
 	.wrapper {
-		margin: 0 auto;
-		width: 80%;
-		max-width: 1000px;
-
 		@include bp(desktop) {
 			margin: 0;
 			position: relative;
@@ -361,4 +362,32 @@ body {
 		}
 	}
 
+}
+
+.hexnumbers {
+
+	aside {
+		margin: 20px;
+		padding: 20px;
+		background-color: darkred;
+		color: white;
+		border-radius: 5px;
+	}
+
+	.number-column {
+		text-align: right;
+		width: 100px;
+		font-family: monospace;
+		font-size: 1.2rem;
+		padding: 20px;
+		margin: 20px;
+	}
+
+	.math-column {
+		// width: 200px;
+		font-family: monospace;
+		font-size: 1.2rem;
+		padding: 20px;
+		margin: 20px;
+	}
 }

@@ -139,6 +139,11 @@ body {
     opacity: 0; }
   to {
     opacity: 1; } }
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px; }
+
 .home .banner {
   background-image: url(../images/impossible-geometry-thing-02.png), url(../images/banner-image-sky.jpg);
   background-size: cover;
@@ -153,18 +158,14 @@ body {
       left: 0;
       width: 40%;
       height: 100vh; } }
-.home .wrapper {
-  margin: 0 auto;
-  width: 80%;
-  max-width: 1000px; }
-  @media all and (min-width: 768px) {
-    .home .wrapper {
-      margin: 0;
-      position: relative;
-      top: 0;
-      left: 40%;
-      width: 60%;
-      height: 100vh; } }
+@media all and (min-width: 768px) {
+  .home .wrapper {
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    height: 100vh; } }
 .home ul {
   list-style: none; }
   .home ul li a {
@@ -343,5 +344,24 @@ body {
     .box-breather .prompt .hold {
       animation: hold-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
       opacity: 0; }
+
+.hexnumbers aside {
+  margin: 20px;
+  padding: 20px;
+  background-color: darkred;
+  color: white;
+  border-radius: 5px; }
+.hexnumbers .number-column {
+  text-align: right;
+  width: 100px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  padding: 20px;
+  margin: 20px; }
+.hexnumbers .math-column {
+  font-family: monospace;
+  font-size: 1.2rem;
+  padding: 20px;
+  margin: 20px; }
 
 /*# sourceMappingURL=styles.css.map */

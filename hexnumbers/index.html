@@ -5,7 +5,162 @@
 	<title>Hexadecimal numbers</title>
 	<link rel="stylesheet" href="../styles/styles.css">
 </head>
-<body>
-	
+<body class="hexnumbers">
+	<div class="wrapper">
+		<h1>Counting to F</h1>
+		<h2>A Lesson on Hexadecimal Numbers</h1>
+		<p>
+			Have you ever seen a colour in a CSS file that looks like #FFAACC and wondered what it's all about? Well, those are numbers that are in hexadecimal notation. The number system that we are most accustomed to is called decimal, or base 10. We probably use it because we have 10 fingers. Hexadecimal (or base 16) is like that except it has 16 digits. Instead of creating 6 new digits they just used the letters A to F. 
+		</p>
+		<aside>
+			The # isn't part of the number, it's just to distinguish hex numbers from decimal ones.
+		</aside>
+		<p>
+			Ok, that's pretty simple, but how do we count with these things? Well, let's start with the numbering system that we know: decimal.
+		</p>
+		<aside>
+			To make things simpler we start counting at 0 instead of 1. Sorry, this is computer science. Also, let's show some of the zeroes on the left that we usually leave off. This will make things a little clearer.
+		</aside>
+		<div class="number-column">
+			<div>0000</div>
+			<div>0001</div>
+			<div>0002</div>
+			<div>0003</div>
+			<div>0004</div>
+			<div>0005</div>
+			<div>0006</div>
+			<div>0007</div>
+			<div>0008</div>
+			<div>0009</div>
+		</div>
+		<p>
+			Oh no, we've run out of symbols. What do we do next?
+		</p>
+		<div class="number-column">
+			<div>0010</div>
+		</div>
+		<p>We put the first symbol in the column and increment the column directly to the left of it. We can keep doing that for a while...</p>
+		<div class="number-column">
+			<div>0011</div>
+			<div>0012</div>
+			<div>0013</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0019</div>
+			<div>0020</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0029</div>
+			<div>0030</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0099</div>
+			<div>0100</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0999</div>
+			<div>1000</div>
+		</div>
+		<div>Ok, you get the idea. Now let's switch to binary (a.k.a base 2). Computers use binary to represent numbers. It's the nerdiest numbering system. It has two symbols: 0 and 1. How the heck do you count with just two digits? Well, we start out just like the last time:</div>
+		<div class="number-column">
+			<div>0000</div>
+			<div>0001</div>
+		</div>
+		<p>D'oh, we've run out of digits already. That was fast. But, I think you know what to do now: just put a zero in the column and increment the one on the left.</p>
+		<div class="number-column">
+			<div>0010</div>
+		</div>
+		<p>And keep going...</p>
+		<div class="number-column">
+			<div>0011</div>
+			<div>0100</div>
+			<div>0101</div>
+			<div>0111</div>
+			<div>1000</div>
+		</div>
+		<aside>There are 10 types of people, those who know binary and those who don't</aside>
+		<p>And so forth. So we know how to count now, but how do we know how to convert binary to decimal. We don't want to have to start from zero and count up until we reach the number. Luckily the numbers folow a pattern</p>
+		<div class="math-column">
+			<div>0001 = 1</div>
+			<div>0010 = 2</div>
+			<div>0100 = 4</div>
+			<div>1000 = 8</div>
+		</div>
+		<p>The decimal numbers follow the same pattern. Let's look at those:</p>	
+		<div class="math-column">
+			<div>0001 = 1</div>
+			<div>0010 = 10</div>
+			<div>0100 = 100</div>
+			<div>1000 = 1000</div>
+		</div>
+		<p>Oh wait, that didn't help much. Anyways, in decimal each column is 10 to the power the number of whichever column it is in (starting at zero on the right).</p>
+		<div class="math-column">
+			<div>0001 = 10<sup>0</sup></div>
+			<div>0010 = 10<sup>1</sup></div>
+			<div>0100 = 10<sup>2</sup></div>
+			<div>1000 = 10<sup>3</sup></div>
+		</div>
+		<aside>Don't forget, any number to the power of zero is 1.</aside>
+		<p>And in binary it's 2 to the power of the column number:</p>
+		<div class="math-column">
+			<div>0001 = 2<sup>0</sup> = 1</div>
+			<div>0010 = 2<sup>1</sup> = 2</div>
+			<div>0100 = 2<sup>2</sup> = 4</div>
+			<div>1000 = 2<sup>3</sup> = 8</div>
+		</div>
+		<p>So to figure out what a binary number is we just have to multiply each digit in each column by its power of two. For instance:</p>
+		<div class="math-column">
+			<div>1101</div> 
+			<div>= 1 &times; 2<sup>3</sup></div>
+			<div>+ 1 &times; 2<sup>2</sup></div>
+			<div>+ 0 &times; 2<sup>1</sup></div>
+			<div>+ 1 &times; 2<sup>0</sup></div>
+			<div>= 13</div>
+		</div>
+		<p>But with only 2 digits it takes a lot of room to represent a number. Eight is 3 digits! So decimal is definitely better in that respect. But what if they was a numbering system that had even more than 10 digits? Then you could represent numbers even more compactly! And what if it was also a power of 2 just like how computers like? That brings us to the hexadecimal numbering system.</p>
+		<p>Hex numbers use the digits 0 to 9 for its first ten and then scavenge the letters <em>a</em> to <em>f</em> (or A to F, case doesn't matter) to reach 16 without creating new symbols. Let's see how you count with them, although I'm sure you can guess how by now:</p>
+		<div class="number-column">
+			<div>0001</div>
+			<div>0002</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0009</div>
+			<div>000f</div>
+			<div>0010</div>
+			<div>0011</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>001f</div>
+			<div>0020</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>00ff</div>
+			<div>0100</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+			<div>0fff</div>
+			<div>1000</div>
+		</div>
+		<p>So F is the last symbol like 9 and 10 is like 10 except it's 16 in our decimal system. No problem, eh? And to figure out what a number is we just multiply each digit by its column value:</p>
+		<div class="math-column">
+			<div>ff</div>
+			<div>= f &times; 16<sup>1</sup></div>
+			<div>+ f &times; 16<sup>0</sup></div>
+			<div>= 15 &times; 16</div>
+			<div>+ 15 &times; 1</div>
+			<div>= 240</div>
+			<div>+ 15</div>
+			<div>= 255</div>
+		</div>
+		<p>There's a famous number, eh? So now you see how FF equals 255 and you can probably guess why #FFFFFF is equivalent to rgb(255, 255, 255) but let's spell it out. F is 1111 in binary. 1111 is 4 bits. All hex numbers fit in 4 bits. A byte is 8 bits, so a byte can be represented by two hex numbers.The red, green, blue and alpha channels of each colour get one byte each. So each channel can be represented by 2 hex numbers. </p>
+	</div>
 </body>
 </html>
