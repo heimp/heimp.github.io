@@ -29,10 +29,40 @@ body {
 
 .home {
 
+	.banner {
+		background-image: url(../images/impossible-geometry-thing-02.png), url(../images/banner-image-sky.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 200px;
+
+		@include bp(tablet) {
+
+		}
+
+		@include bp(desktop) {
+			background-repeat: repeat-y;
+			background-size: auto;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 40%;
+			height: 100vh;
+		}
+	}
+
 	.wrapper {
 		margin: 0 auto;
 		width: 80%;
 		max-width: 1000px;
+
+		@include bp(desktop) {
+			margin: 0;
+			position: relative;
+			top: 0;
+			left: 40%;
+			width: 60%;
+			height: 100vh;
+		}
 	}
 
 	ul {
@@ -70,7 +100,7 @@ body {
 		bottom: 0;
 		width: 20%;
 		background-color: black;
-		
+
 		.hidden-controls {
 
 			display: none;
@@ -156,14 +186,6 @@ body {
 		min-height: 100vh;
 
 
-		@include bp(tablet) {
-
-		}
-
-		@include bp(desktop) {
-
-		}
-
 		.grid {
 
 			.tile {
@@ -232,8 +254,20 @@ body {
 
 .box-breather {
 
-	$little-box-size: 50px;
-	$big-box-size: 500px + $little-box-size;
+	$big-box-size: 90vw;
+	$little-box-size: 10%;
+
+	@include bp(tablet) {
+		$big-box-size: 90vh;
+		$little-box-size: 10%;
+	}
+
+	@include bp(desktop) {
+		$big-box-size: 90vh;
+		$little-box-size: 10%;
+	}
+
+	$edge: calc(100% - #{$little-box-size});
 
 	@keyframes mover {
 		0%, 100% {
@@ -242,14 +276,14 @@ body {
 		}
 		25% {
 			top: 0;
-			left: calc(100% - 50px);
+			left: $edge;
 		}
 		50% {
-			top: calc(100% - 50px);
-			left: calc(100% - 50px);
+			top: $edge;
+			left: $edge;
 		}
 		75% {
-			top: calc(100% - 50px);
+			top: $edge;
 			left: 0;
 		}
 	}
@@ -281,41 +315,50 @@ body {
 		}
 	}
 
-	.wrapper {
-		width: 700px;
-		margin: 0 auto;
-		text-align: center;
-	}
+	background-color: deepskyblue;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	.big-box {
-		margin: 0 auto;
-		width: 550px;
-		height: 550px;
+		// padding: $little-box-size;
+		width: $big-box-size;
+		height: $big-box-size;
 		position: relative;
 		background-color: cornflowerblue;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.little-box {
-		width: 50px;
-		height: 50px;
+		width: $little-box-size;
+		height: $little-box-size;
 		background-color: teal;
-		position: relative;
+		position: absolute;
 		animation: mover 16s linear infinite;
 	}
 
-	.prompt .inhale {
-		animation: inhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
-		opacity: 1;
-	}
+	.prompt {
+		color: white;
+		font-size: 2rem;
 
-	.prompt .exhale {
-		animation: exhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
-		opacity: 0;
-	}
+		.inhale {
+			animation: inhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+			opacity: 1;
+		}
 
-	.prompt .hold {
-		animation: hold-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
-		opacity: 0;
+		.exhale {
+			animation: exhale-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+			opacity: 0;
+		}
+
+		.hold {
+			animation: hold-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
+			opacity: 0;
+		}
 	}
 
 }
