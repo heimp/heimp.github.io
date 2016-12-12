@@ -133,12 +133,19 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 body {
-  animation: fader 1s; }
+  animation: fader 1s;
+  font-family: 'Muli', sans-serif; }
 @keyframes fader {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  padding: 20px; }
+
 .home .banner {
   background-image: url(../images/impossible-geometry-thing-02.png), url(../images/banner-image-sky.jpg);
   background-size: cover;
@@ -176,8 +183,7 @@ body {
     transition: all 500ms; }
     .home ul li a:hover {
       background-color: #0073ff;
-      padding: 20px 20px 20px 0;
-      font-size: 2rem; }
+      padding: 20px 0; }
 
 .lang-table .controls-pane {
   position: fixed;
@@ -344,5 +350,26 @@ body {
     .box-breather .prompt .hold {
       animation: hold-prompter 16s cubic-bezier(1, 0, 1, 0) infinite;
       opacity: 0; }
+
+.hexnumbers aside {
+  margin: 20px;
+  padding: 20px;
+  background-color: darkred;
+  color: white;
+  border-radius: 5px; }
+.hexnumbers .number-column {
+  text-align: right;
+  width: 100px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  padding: 20px;
+  margin: 20px;
+  font-family: 'Source Code Pro', monospace; }
+.hexnumbers .math-column {
+  font-family: monospace;
+  font-size: 1.2rem;
+  padding: 20px;
+  margin: 20px;
+  font-family: 'Source Code Pro', monospace; }
 
 /*# sourceMappingURL=styles.css.map */
