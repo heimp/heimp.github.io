@@ -357,19 +357,13 @@ body {
   background-color: darkred;
   color: white;
   border-radius: 5px; }
+.hexnumbers .math-column, .hexnumbers .number-column {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.2rem;
+  padding: 20px;
+  margin: 20px; }
 .hexnumbers .number-column {
   text-align: right;
-  width: 100px;
-  font-family: monospace;
-  font-size: 1.2rem;
-  padding: 20px;
-  margin: 20px;
-  font-family: 'Source Code Pro', monospace; }
-.hexnumbers .math-column {
-  font-family: monospace;
-  font-size: 1.2rem;
-  padding: 20px;
-  margin: 20px;
-  font-family: 'Source Code Pro', monospace; }
+  width: 100px; }
 
 /*# sourceMappingURL=styles.css.map */

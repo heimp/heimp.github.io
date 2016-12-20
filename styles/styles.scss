@@ -330,7 +330,6 @@ body {
 	align-items: center;
 
 	.big-box {
-		// padding: $little-box-size;
 		width: $big-box-size;
 		height: $big-box-size;
 		position: relative;
@@ -380,22 +379,17 @@ body {
 		border-radius: 5px;
 	}
 
-	.number-column {
-		text-align: right;
-		width: 100px;
-		font-family: monospace;
+	.math-column {
+		font-family: 'Source Code Pro', monospace;
 		font-size: 1.2rem;
 		padding: 20px;
 		margin: 20px;
-		font-family: 'Source Code Pro', monospace;
 	}
 
-	.math-column {
-		// width: 200px;
-		font-family: monospace;
-		font-size: 1.2rem;
-		padding: 20px;
-		margin: 20px;
-		font-family: 'Source Code Pro', monospace;
+	.number-column {
+		@extend .math-column;
+		text-align: right;
+		width: 100px;
 	}
+
 }
